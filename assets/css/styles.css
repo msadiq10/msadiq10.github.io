@@ -37,6 +37,7 @@ h1,h2,h3,h4{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid hsl(250, 8%, 15%);
 }
 
 .nav_logo, .nav_toggle{
@@ -259,4 +260,21 @@ img{
 .button-flex{
     display: inline-flex;
     align-items: center;
+}
+
+.about_img{
+    width: 200px;
+    border-radius: 0.5rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.about_description{
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.about_buttons{
+    display: flex;
+    justify-content: center;
 }

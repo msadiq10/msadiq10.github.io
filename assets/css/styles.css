@@ -278,3 +278,47 @@ img{
     display: flex;
     justify-content: center;
 }
+
+/* left for skills */
+.skills_content{
+    text-align: center;
+}
+
+.education_data{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+
+.education_title{
+    font-size: 0.938rem;
+    font-weight: 500;
+}
+
+.education_subtitle{
+    display: inline-block;
+    font-size: 0.813rem;
+    margin-bottom: 1rem;
+}
+
+.education_calender{
+    font-size: 0.813rem;
+    color: hsl(250, 8%, 65%);
+
+}
+
+.education_rounder{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: hsl(250, 69%, 61%);
+    border-radius: 50%;
+}
+
+.education_line{
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: hsl(250, 69%, 61%);
+    transform: translate(6px, -7px);
+}

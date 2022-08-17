@@ -371,3 +371,15 @@ img{
 .portfolio_button:hover .button_icon{
     transform: translateX(0.25rem);
 }
+
+.portfolio [data-content]{
+    display: none;
+}
+
+.portfolios_active[data-content]{
+    display: block;
+}
+
+.portfolios_button.portfolios_active{
+    color:hsl(250, 69%, 61%);
+}

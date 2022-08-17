@@ -29,3 +29,23 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+// portfolio tabs
+const tabs = document.querySelectorAll('[data-target]'),
+    tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target)
+
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('portfolios_active')
+        })
+        target.classList.add('portfolios_active')
+
+        tabs.forEach(tab => {
+            tab.classList.remove('portfolios_active')
+        })
+        tab.classList.add('portfolios_active')
+    })
+})

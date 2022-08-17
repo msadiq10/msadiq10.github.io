@@ -322,3 +322,52 @@ img{
     background-color: hsl(250, 69%, 61%);
     transform: translate(6px, -7px);
 }
+
+.portfolios_tabs{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.portfolios_button{
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;   
+}
+
+.portfolios_button:hover{
+    color: hsl(250, 69%, 61%);
+}
+
+.portfolios_icon{
+    font-size: 1.8rem;
+    margin-right: 0.25rem;
+
+}
+
+.portfolios_container{
+    overflow: initial;
+}
+
+.portfolio_content{
+    padding: 0 1.5rem;
+}
+
+.portfolio_img{
+    width: 265px;
+    border-radius: 0.5rem;
+    justify-self: center;
+}
+
+.portfolio_title{
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;   
+}
+
+.portfolio_description{
+    margin-bottom: 0.75rem;
+}
+
+.portfolio_button:hover .button_icon{
+    transform: translateX(0.25rem);
+}

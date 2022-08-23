@@ -350,7 +350,7 @@ img{
 }
 
 .portfolio_content{
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 2rem;
 }
 
 .portfolio_img{
@@ -383,3 +383,32 @@ img{
 .portfolios_button.portfolios_active{
     color:hsl(250, 69%, 61%);
 }
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    content: '';
+}
+
+.swiper-portfolio-icon{
+    font-size: 2rem;
+    color: hsl(250, 69%, 61%);
+}
+
+.swiper-button-prev{
+    left: -0.5rem;
+}
+
+.swiper-button-next{
+    right: -0.5rem;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: hsl(250, 69%, 61%); /* first color */ 
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet{
+    outline: none;
+}
+

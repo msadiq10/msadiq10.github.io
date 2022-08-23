@@ -412,3 +412,27 @@ img{
     outline: none;
 }
 
+.contact_container{
+    row-gap: 3rem;
+}
+
+.contact_info{
+    display: flex;
+    margin-bottom: 2rem; /* mb-2 */
+}
+
+.contact_icon{
+    font-size: 2rem;
+    color: hsl(250, 69%, 61%); /* first color */
+    margin-right: 0.75rem; /* mb075 */
+}
+
+.contact_title{
+    font-size: 1.125rem; /* h3 font size */
+    font-weight: 500; /* font medium */
+}
+
+.contact_subtitle{
+    font-size: 0.813rem; /* small font size */
+    color:hsl(250, 8%, 65%); /* text color light */
+}

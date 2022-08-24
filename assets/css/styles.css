@@ -575,6 +575,7 @@ img{
 }
 
 /* scaling */
+
 /* small devices */
 @media screen and (max-width: 350px){
     .container{
@@ -602,5 +603,31 @@ img{
         gap: 0.5rem;
     }
 }
+
 /* medium devices */
-/* large devices */
+@media screen and (min-width: 568px){
+    .home_content{
+        grid-template-columns: max-content 1fr 1fr;
+    }
+
+    .home_data{
+        grid-column: initial;
+    }
+
+    .home_img{
+        order: 1;
+        justify-self: center;
+    }
+
+    .about_container,.portfolio_content,.footer_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education_container{
+        display: grid;
+        grid-template-columns: 0.6fr;
+        justify-content: center;
+    }
+
+    
+}

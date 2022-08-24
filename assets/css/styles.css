@@ -573,3 +573,34 @@ img{
 .footer_social{
     color: #FFF;
 }
+
+/* scaling */
+/* small devices */
+@media screen and (max-width: 350px){
+    .container{
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+
+    .nav_menu{
+        padding: 2rem 0.25rem 4rem;
+    }
+
+    .nav_list{
+        column-gap: 0;
+    }
+
+    .home_content{
+        grid-template-columns: .25fr 3fr;
+    }
+
+    .home_blob{
+        width: 170px;
+    }
+
+    .education_data{
+        gap: 0.5rem;
+    }
+}
+/* medium devices */
+/* large devices */

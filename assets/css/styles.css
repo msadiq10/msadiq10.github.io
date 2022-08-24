@@ -1,5 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+
+    --hue-color: 250; 
+
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --blob-color: hsl(var(--hue-color), 97%, 13%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margin Bottom ==========*/
+
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/* variables for light/dark themes */
+body.dark-theme{
+    --first-color-second: hsl(var(--hue-color),30%,8%);
+    --title-color: hsl(var(--hue-color),8%,95%);
+    --text-color: hsl(var(--hue-color),8%,75%);
+    --body-color: hsl(var(--hue-color),28%,12%);
+    --blob-color: hsl(var(--hue-color), 100%, 0%);
+}
+
+/* light/dark buttons */
+.nav_btns{
+    display: flex;
+    align-items: center;
+}
+
+.change-theme{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    margin-right: var(--mb-1);
+    cursor: pointer;
+}
+
+.change-theme:hover{
+    color: var(--first-color);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -9,17 +96,17 @@
 html{
     scroll-behavior: smooth;
 }
-body{
-    margin: 0 0 3rem 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.938rem;
-    background-color: hsl(250, 60%, 99%);
-    color: hsl(250, 8%, 45%);
+body {
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
 
 h1,h2,h3,h4{
-    color: hsl(250, 8%, 15%);
-    font-weight: 600;
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
 }
 
 .header{
@@ -27,26 +114,26 @@ h1,h2,h3,h4{
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 100;
-    background-color: hsl(250, 60%, 99%);
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
 }
 
 .nav{
     max-width: 968px;
-    height: 3rem;
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid hsl(250, 8%, 15%);
+    border-top: 1px solid hsl(var(--hue-color), 8%, 15%);
 }
 
 .nav_logo, .nav_toggle{
-    color: hsl(250, 8%, 15%);
-    font-weight: 500;
+    color: var(--title-color);
+    font-weight: var(--font-medium);
 }
 
 .nav_logo:hover{
-    color: hsl(250, 69%, 61%);
+    color: var(--first-color);
 }
 
 .nav_toggle{
@@ -55,7 +142,7 @@ h1,h2,h3,h4{
 }
 
 .nav_toggle:hover{
-    color: hsl(250, 69%, 61%);
+    color: var(--first-color);
 }
 
 .nav_list{
@@ -67,13 +154,13 @@ h1,h2,h3,h4{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.813rem;
-    color: hsl(250, 8%, 15%);
-    font-weight: 500;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
 }
 
 .nav_link:hover{
-    color:hsl(250, 69%, 61%);
+    color:var(--first-color);
 }
 
 .nav_icon{
@@ -86,11 +173,11 @@ h1,h2,h3,h4{
     bottom: 0.5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color:hsl(250, 69%, 61%);
+    color: var(--first-color);
 }
 
 .nav_close:hover{
-    color:hsl(250, 57%, 53%);
+    color:var(--first-color-alt);
 }
 
 ul{
@@ -113,23 +200,25 @@ img{
 }
 
 .title_section{
-    font-size: 1.5rem;
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
 }
 
 .subtitle_section{
     display: block;
-    font-size: 0.813rem;
-    margin-bottom: 3rem;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
 }
 
-.title_section, .subtitle_section{
+.title_section,
+.subtitle_section{
     text-align: center;
 }
 
 .container{
     max-width: 768px;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
 }
 
 .grid{
@@ -143,7 +232,7 @@ img{
         bottom: -100%;
         left: 0;
         width: 100%;
-        background-color: hsl(250, 60%, 99%);
+        background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
         box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
         border-radius: 1.5rem 1.5rem 0 0;
@@ -174,16 +263,16 @@ img{
 
 .home_social-icon{
     font-size: 1.25rem;
-    color: hsl(250, 69%, 61%);
+    color: var(--first-color);
 }
 
 .home_social-icon:hover{
-    color: hsl(250, 57%, 53%);
+    color: var(--first-color-alt);
 }
 
 .home_blob{
     width: 200px;
-    fill:hsl(265, 97%, 13%);
+    fill: var(--blob-color);
 }
 
 .home_blob-img{
@@ -196,18 +285,18 @@ img{
 }
 
 .home_title{
-    font-size: 2rem;
+    font-size: var(--big-font-size);
 }
 
 .home_subtitle{
-    font-size: 1.125rem;
-    color: hsl(250, 8%, 45%);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
 }
 
 .home_description{
-    margin-bottom: 2rem;
+    margin-bottom: var(--mb-2);
 }
 
 .home_scroll{
@@ -215,7 +304,7 @@ img{
 }
 
 .home_scroll-button{
-    color: hsl(250, 69%, 61%);
+    color: var(--first-color);
     transition: 0.3s;
 }
 
@@ -228,10 +317,10 @@ img{
 }
 
 .home_scroll-name{
-    font-size: .813rem;
-    color: hsl(250, 8%, 15%);
-    font-weight: 500;
-    margin-right: 0.25rem;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-right: var(--mb-0-25);
 }
 
 .home_scroll-arrow{
@@ -240,20 +329,20 @@ img{
 
 .button{
     display: inline-block;
-    background-color: hsl(250, 69%, 61%);
+    background-color: var(--first-color);
     color: #FFF;
     padding: 1rem;
     border-radius: 0.5rem;
-    font-weight: 500;
+    font-weight: var(--font-medium);
 }
 
 .button:hover{
-    background-color: hsl(250, 57%, 53%);
+    background-color: var(--first-color-alt);
 }
 
 .button_icon{
     font-size: 1.25rem;
-    margin-left: 0.5rem;
+    margin-left: var(--mb-0-5);
     transition: 0.3s;
 }
 
@@ -271,7 +360,7 @@ img{
 
 .about_description{
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--mb-2-5);
 }
 
 .about_buttons{
@@ -291,19 +380,19 @@ img{
 }
 
 .education_title{
-    font-size: 0.938rem;
-    font-weight: 500;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
 }
 
 .education_subtitle{
     display: inline-block;
-    font-size: 0.813rem;
-    margin-bottom: 1rem;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
 }
 
 .education_calender{
-    font-size: 0.813rem;
-    color: hsl(250, 8%, 65%);
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
 
 }
 
@@ -311,7 +400,7 @@ img{
     display: inline-block;
     width: 13px;
     height: 13px;
-    background-color: hsl(250, 69%, 61%);
+    background-color: var(--first-color);
     border-radius: 50%;
 }
 
@@ -319,29 +408,29 @@ img{
     display: block;
     width: 1px;
     height: 100%;
-    background-color: hsl(250, 69%, 61%);
+    background-color: var(--first-color);
     transform: translate(6px, -7px);
 }
 
 .portfolios_tabs{
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 2rem;
+    margin-bottom: var(--mb-2);
 }
 
 .portfolios_button{
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
     cursor: pointer;   
 }
 
 .portfolios_button:hover{
-    color: hsl(250, 69%, 61%);
+    color: var(--first-color);
 }
 
 .portfolios_icon{
     font-size: 1.8rem;
-    margin-right: 0.25rem;
+    margin-right: var(--mb-0-25);
 
 }
 
@@ -360,12 +449,12 @@ img{
 }
 
 .portfolio_title{
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;   
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
 }
 
 .portfolio_description{
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--mb-0-75);
 }
 
 .portfolio_button:hover .button_icon{
@@ -381,7 +470,7 @@ img{
 }
 
 .portfolios_button.portfolios_active{
-    color:hsl(250, 69%, 61%);
+    color:var(--first-color);
 }
 
 .swiper-button-prev::after,
@@ -391,7 +480,7 @@ img{
 
 .swiper-portfolio-icon{
     font-size: 2rem;
-    color: hsl(250, 69%, 61%);
+    color: var(--first-color);
 }
 
 .swiper-button-prev{
@@ -403,7 +492,7 @@ img{
 }
 
 .swiper-pagination-bullet-active{
-    background-color: hsl(250, 69%, 61%); /* first color */ 
+    background-color: var(--first-color);
 }
 
 .swiper-button-prev,
@@ -418,23 +507,23 @@ img{
 
 .contact_info{
     display: flex;
-    margin-bottom: 2rem; /* mb-2 */
+    margin-bottom: var(--mb-2);
 }
 
 .contact_icon{
     font-size: 2rem;
-    color: hsl(250, 69%, 61%); /* first color */
-    margin-right: 0.75rem; /* mb-0-75 */
+    color: var(--first-color);
+    margin-right: var(--mb-0-75);
 }
 
 .contact_title{
-    font-size: 1.125rem; /* h3 font size */
-    font-weight: 500; /* font medium */
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
 }
 
 .contact_subtitle{
-    font-size: 0.813rem; /* small font size */
-    color:hsl(250, 8%, 65%); /* text color light */
+    font-size: var(--small-font-size);
+    color:var(--text-color-light);
 }
 
 .footer{
@@ -446,17 +535,17 @@ img{
 }
 
 .footer_bg{
-    background-color: hsl(250, 69%, 61%); /* first color second */
+    background-color: var(--first-color-second);
     padding: 2rem 0 3rem;
 }
 
 .footer_title{
-    font-size: 1.5rem; /* h1 font size */
-    margin-bottom: 0.25rem; /* mb-0-25 */
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-0-25);
 }
 
 .footer_subtitle{
-    font-size: 0.813rem; /* small font size */
+    font-size: var(--small-font-size);
 }
 
 .footer_links{
@@ -466,16 +555,16 @@ img{
 }
 
 .footer_link:hover{
-    color:hsl(250, 92%, 85%); /* first color lighter */
+    color: var(--first-color-lighter);
 }
 
 .footer_social{
     font-size: 1.25rem;
-    margin-right: 1.5rem; /* mb-1-5 */
+    margin-right: var(--mb-1-5);
 }
 
 .footer_social:hover{
-    color:hsl(250, 92%, 85%); /* first color lighter */
+    color:var(--first-color-lighter);
 }
 
 .footer_title,

@@ -768,8 +768,12 @@ img{
         padding: 0;
     }
 
+    .home_content{
+        column-gap: 4rem;
+    }
+
     .container{
-        max-width: 900px;
+        max-width: 950px;
     }
 
     .home_blob{
@@ -777,7 +781,11 @@ img{
     }
 
     .home_social{
-        transform: translateX(-2rem);
+        margin-left: var(--mb-1);
+    }
+
+    .home_scroll-button{
+        margin-left: 5.75rem;
     }
 
     .portfolio_content{

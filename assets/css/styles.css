@@ -443,6 +443,7 @@ img{
 }
 
 .portfolio_img{
+    max-height: 250px;
     width: 265px;
     border-radius: 0.5rem;
     justify-self: center;
